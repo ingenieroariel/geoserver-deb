@@ -1,0 +1,5 @@
+geoserver (2.2) precise; urgency=low
+
+  * Initial release. (Closes: #1)
+
+ -- Ariel Nunez <ingenieroariel@gmail.com>  Sun, 23 Sep 2012 23:18:45 +0000

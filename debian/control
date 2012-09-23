@@ -1,0 +1,13 @@
+Package: geoserver
+Section: science
+Version: 2.2
+Priority: extra
+Architecture: all
+Depends: tomcat7
+Maintainer: Ariel Nunez <ingenieroariel@gmail.com>
+Homepage: http://geoserver.org
+Description:  High performance, standards-compliant map and geospatial data server.
+ GeoServer is an open source software server written in Java that allows users to share 
+ and edit geospatial data. Designed for interoperability, it publishes data from any 
+ major spatial data source using open standards such as Web Features Server (WFS), Web 
+ Map Server (WMS), and Web Coverage Server (WCS).

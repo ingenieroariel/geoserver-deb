@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# stop tomcat before installing
+service tomcat7 stop
