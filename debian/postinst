@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Back up tomcat7 config file before changing it
 cp /etc/default/tomcat7 /etc/default/tomcat7.orig
@@ -9,7 +9,7 @@ JVM_OPTS='JAVA_OPTS="-Djava.awt.headless=true -Xms256m -Xmx768m -Xrs -XX:PerfDat
 # Append a line with the new jvm configuration
 if [ "$(grep ^GEOSERVER /etc/default/tomcat7)" == "" ]; then 
 	echo '# GEOSERVER additions' >> /etc/default/tomcat7
-	echo 'JAVA_HOME=/usr/'
+	echo 'JAVA_HOME=/usr/' >> /etc/default/tomcat7
 	echo $JVM_OPTS >> /etc/default/tomcat7
 fi
 

@@ -23,9 +23,8 @@ install:
 	unzip $(CURDIR)/geoserver*war.zip -d $(CURDIR)/debian/geoserver/usr/share/geoserver/geoserver
 	
 	# configure geoserver in tomcat
-	GEOSERVER='<Context path="/geoserver" docBase="/usr/share/geoserver/geoserver" />'
 	mkdir -p $(CURDIR)/debian/geoserver/etc/tomcat7/Catalina/localhost
-	echo $(GEOSERVER) >> $(CURDIR)/debian/geoserver/etc/tomcat7/Catalina/localhost/geoserver.xml
+	echo '<Context path="/geoserver" docBase="/usr/share/geoserver/geoserver" />'  >> $(CURDIR)/debian/geoserver/etc/tomcat7/Catalina/localhost/geoserver.xml
 
 binary-indep: build install
 
