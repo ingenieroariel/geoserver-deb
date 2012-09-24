@@ -20,7 +20,11 @@ install:
 	# unpack geoserver in /usr/share/geoserver
 	mkdir -p $(CURDIR)/geoserver
 	mkdir -p $(CURDIR)/debian/geoserver/usr/share/geoserver/
-	unzip $(CURDIR)/geoserver*war.zip -d $(CURDIR)/debian/geoserver/usr/share/geoserver/geoserver
+	unzip $(CURDIR)/geoserver*war.zip -d geoserver
+	mv $(CURDIR)/geoserver/geoserver.war $(CURDIR)/geoserver/gs.zip
+	unzip $(CURDIR)/geoserver/gs.zip -d $(CURDIR)/debian/geoserver/usr/share/geoserver/geoserver
+	mv $(CURDIR)/geoserver/target/VERSION.txt $(CURDIR)/debian/geoserver/usr/share/geoserver/geoserver
+	rm -rf $(CURDIR)/geoserver
 	
 	# configure geoserver in tomcat
 	mkdir -p $(CURDIR)/debian/geoserver/etc/tomcat7/Catalina/localhost
