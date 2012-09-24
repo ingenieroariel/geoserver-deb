@@ -7,12 +7,14 @@ cp /etc/default/tomcat7 /etc/default/tomcat7.orig
 JVM_OPTS='JAVA_OPTS="-Djava.awt.headless=true -Xms256m -Xmx768m -Xrs -XX:PerfDataSamplingInterval=500 -XX:MaxPermSize=128m"'
 
 # Append a line with the new jvm configuration
-# FIXME: This will duplicate this line after every installation,
-# make it conditional.
-echo $JVM_OPTS >> /etc/default/tomcat7
+if [ "$(grep ^GEOSERVER /etc/default/tomcat7)" == "" ]; then 
+	echo '# GEOSERVER additions' >> /etc/default/tomcat7
+	echo 'JAVA_HOME=/usr/'
+	echo $JVM_OPTS >> /etc/default/tomcat7
+fi
 
 # Fix permissions on deployed jar
 chown -R tomcat7:tomcat7 /usr/share/geoserver/geoserver
 
 # start tomcat after installing geoserver
-service tomcat7 start
+service tomcat7 restart
