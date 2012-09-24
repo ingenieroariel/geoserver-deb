@@ -1,12 +1,14 @@
 Source: geoserver
 Section: science
 Priority: extra
+Build-Depends: debhelper (>= 7.0.50~), unzip
 Maintainer: Ariel Nunez <ingenieroariel@gmail.com>
 Homepage: http://geoserver.org
+Vcs-Browser: https://github.com/geoserver/geoserver
+Vcs-git: git://github.com/geoserver/geoserver.git
 
 Package: geoserver
 Architecture: all
-Build-Depends: debhelper (>= 7.0.50~), unzip
 Depends: tomcat7
 Description:  High performance, standards-compliant map and geospatial data server.
  GeoServer is an open source software server written in Java that allows users to share 
